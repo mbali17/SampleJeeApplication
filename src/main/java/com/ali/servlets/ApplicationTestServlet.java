@@ -1,4 +1,4 @@
-package com.ali;
+package com.ali.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

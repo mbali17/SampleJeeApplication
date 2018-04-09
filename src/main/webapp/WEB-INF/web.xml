@@ -4,16 +4,6 @@
 
 <web-app>
   <display-name>A web application to practice JEE.</display-name>
- <!--  <servlet>
-  	<servlet-name>ApplicationTestServlet</servlet-name>
-  	<display-name>ApplicationTestServlet</display-name>
-  	<description>Used to Check if the application is running</description>
-  	<servlet-class>com.ali.ApplicationTestServlet</servlet-class>
-  </servlet>
-   <servlet-mapping>
-  	<servlet-name>ApplicationTestServlet</servlet-name>
-  	<url-pattern>/getStatus</url-pattern>
-  </servlet-mapping> -->
   <welcome-file-list>
   	<welcome-file>HomePage.html</welcome-file>
   </welcome-file-list>
