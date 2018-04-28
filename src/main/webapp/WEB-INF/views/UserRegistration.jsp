@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>JSP Title</title>
+<title>User Registration</title>
 </head>
 <body>
-<h1>Welcome to the TODO app.</h1>
-<a href="views/UserRegistration.jsp">Register Here</a>
+${message}
 </body>
 </html>

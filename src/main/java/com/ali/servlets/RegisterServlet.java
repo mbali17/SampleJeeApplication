@@ -3,6 +3,7 @@ package com.ali.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,10 @@ public class RegisterServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("message",request.getParameter("name"));
+		request.getRequestDispatcher("/WEB-INF/views/UserRegistration.jsp").forward(request,response);
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -37,6 +41,7 @@ public class RegisterServlet extends HttpServlet {
 		String repeatPassword = request.getParameter("repeatPassword");
 		String message = "Thanks much " + userName + ", We will register you soon ";
 		System.out.println(" Recieved request with value user Name: "+ userName +" and email"+ email);
+
 		// Write the response back 
 		PrintWriter out = response.getWriter();
 		String responseToTheUser ="<html><body>"+message+"</body></html>";

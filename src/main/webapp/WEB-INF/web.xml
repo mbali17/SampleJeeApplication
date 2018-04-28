@@ -2,7 +2,7 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app version="3.0">
   <display-name>A web application to practice JEE.</display-name>
   <welcome-file-list>
   	<welcome-file>views/HomePage.jsp</welcome-file>
