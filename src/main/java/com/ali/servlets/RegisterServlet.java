@@ -1,5 +1,8 @@
 package com.ali.servlets;
 
+import com.ali.beans.UserBean;
+import com.ali.services.UserRegistrationService;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -39,13 +42,17 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String passWord = request.getParameter("password");
 		String repeatPassword = request.getParameter("repeatPassword");
-		String message = "Thanks much " + userName + ", We will register you soon ";
-		System.out.println(" Recieved request with value user Name: "+ userName +" and email"+ email);
-
-		// Write the response back 
-		PrintWriter out = response.getWriter();
-		String responseToTheUser ="<html><body>"+message+"</body></html>";
-		out.println(responseToTheUser);
+		UserBean userBean = new UserBean(userName,email,passWord,repeatPassword);
+		UserRegistrationService registrationService = new UserRegistrationService();
+		System.out.println("is valid user {}"+registrationService.isValidUser(userBean) + ","+ userBean.getName().equals(""));
+		if(registrationService.isValidUser(userBean)){
+			registrationService.registerUser(userBean);
+            request.setAttribute("welcomeMessage",userBean.getName());
+            request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request,response);
+		}else{
+            request.setAttribute("errorMessage","Password and repeat password do not match");
+            request.getRequestDispatcher("/WEB-INF/views/UserRegistration.jsp").forward(request,response);
+        }
 	}
 
 }

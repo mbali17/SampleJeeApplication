@@ -5,6 +5,6 @@
 <web-app version="3.0">
   <display-name>A web application to practice JEE.</display-name>
   <welcome-file-list>
-  	<welcome-file>views/HomePage.jsp</welcome-file>
+  	<welcome-file>/WEB-INF/views/HomePage.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
