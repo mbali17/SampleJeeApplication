@@ -1,6 +1,6 @@
-package com.ali.services;
+package com.ali.services.registration;
 
-import com.ali.beans.UserBean;
+import com.ali.beans.user.UserBean;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;

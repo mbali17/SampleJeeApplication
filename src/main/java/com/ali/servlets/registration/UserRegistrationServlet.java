@@ -1,33 +1,22 @@
-package com.ali.servlets;
+package com.ali.servlets.registration;
 
-import com.ali.beans.UserBean;
-import com.ali.services.UserRegistrationService;
+import com.ali.beans.user.UserBean;
+import com.ali.services.registration.UserRegistrationService;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  *Servlet used to handle user registration.
  */
 @WebServlet(urlPatterns= "/register",
 			description= "Servlet used to handle user registration.")
-public class RegisterServlet extends HttpServlet {
+public class UserRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public RegisterServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("message",request.getParameter("name"));
 		request.getRequestDispatcher("/WEB-INF/views/UserRegistration.jsp").forward(request,response);

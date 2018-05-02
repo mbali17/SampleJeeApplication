@@ -1,4 +1,4 @@
-package com.ali.beans;
+package com.ali.beans.user;
 
 public class UserBean {
     private String name;
