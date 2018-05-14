@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  *Servlet used to handle user registration.
  */
-@WebServlet(urlPatterns= "/register",
+@WebServlet(urlPatterns= "/register.do",
 			description= "Servlet used to handle user registration.")
 public class UserRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,6 +21,10 @@ public class UserRegistrationServlet extends HttpServlet {
 		request.setAttribute("message",request.getParameter("name"));
 		request.getRequestDispatcher("/WEB-INF/views/UserRegistration.jsp").forward(request,response);
 	}
+
+	public UserRegistrationServlet() {
+	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
