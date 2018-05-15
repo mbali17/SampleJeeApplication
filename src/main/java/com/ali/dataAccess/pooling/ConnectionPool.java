@@ -22,7 +22,7 @@ public class ConnectionPool {
             throw new IllegalArgumentException("Datasource name cannot be blank");
         }else{
             Context context = new InitialContext();
-            dataSource= (DataSource)context.lookup("java:comp/env"+datasourceName);
+            dataSource= (DataSource)context.lookup("java:comp/env/"+datasourceName.get());
         }
     }
     public static Optional<DataSource> getDataSource(Optional<String> datasourceName) throws NamingException {
