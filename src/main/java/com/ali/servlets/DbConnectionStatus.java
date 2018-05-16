@@ -19,14 +19,14 @@ import javax.sql.DataSource;
 /**
  * Servlet to check the status of the application.
  */
-@WebServlet("/getStatus")
-public class ApplicationTestServlet extends HttpServlet {
+@WebServlet("/getDBconnectionStatus")
+public class DbConnectionStatus extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ApplicationTestServlet() {
+    public DbConnectionStatus() {
         super();
         System.out.println("Application status invoked");
     }

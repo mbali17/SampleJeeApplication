@@ -72,6 +72,14 @@
 	      <!-- <configuration> section added to pick up the WEB-INF/web.xml inside  -->
 	        <configuration>
                 <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+				<webResources>
+					<resource>
+						<!-- this is relative to the pom.xml directory -->
+						<directory>${project.basedir}/src/main/resources
+						</directory>
+
+					</resource>
+				</webResources>
             </configuration>
 	   </plugin>
 		<plugin>
