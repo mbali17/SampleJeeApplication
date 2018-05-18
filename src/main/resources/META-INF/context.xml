@@ -23,6 +23,7 @@
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
     <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <!--Setting up the resource for connection pool using Tomcat-->
     <Resource name="jdbc/todoapp"
               auth="Container"
               type="javax.sql.DataSource"
