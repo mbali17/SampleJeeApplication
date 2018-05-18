@@ -27,7 +27,42 @@
 		  <artifactId>commons-lang3</artifactId>
 		  <version>3.0.1</version>
 	  </dependency>
-
+	  <!-- mysql driver.https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	  <dependency>
+		  <groupId>mysql</groupId>
+		  <artifactId>mysql-connector-java</artifactId>
+		  <version>6.0.6</version>
+	  </dependency>
+	  <!-- For Nullable annotation-->
+	  <dependency>
+		  <groupId>com.google.code.findbugs</groupId>
+		  <artifactId>jsr305</artifactId>
+		  <version>3.0.0</version>
+	  </dependency>
+      <!-- Connection pooling,https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+      <dependency>
+          <groupId>commons-dbcp</groupId>
+          <artifactId>commons-dbcp</artifactId>
+          <version>1.4</version>
+      </dependency>
+	  <!-- https://mvnrepository.com/artifact/commons-pool/commons-pool -->
+	  <dependency>
+		  <groupId>commons-pool</groupId>
+		  <artifactId>commons-pool</artifactId>
+		  <version>1.6</version>
+	  </dependency>
+	  <!--        The Api to log with-->
+	  <dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-api</artifactId>
+		  <version>1.7.21</version>
+	  </dependency>
+	  <!--The actual logger implementation-->
+	  <dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-log4j12</artifactId>
+		  <version>1.7.5</version>
+	  </dependency>
   </dependencies>
   <build>
     <finalName>LearnJee</finalName>
@@ -49,8 +84,24 @@
 	      <!-- <configuration> section added to pick up the WEB-INF/web.xml inside  -->
 	        <configuration>
                 <packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+				<webResources>
+					<resource>
+						<!-- this is relative to the pom.xml directory -->
+						<directory>${project.basedir}/src/main/resources
+						</directory>
+
+					</resource>
+				</webResources>
             </configuration>
 	   </plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin>
 	</plugins>
   </build>
 </project>
