@@ -12,4 +12,5 @@ public class DatabaseConstants {
     }
 
     public static final String DATASOURCENAME = "jdbc/todoapp";
+    public static final  String JNDI_PREFIX = "java:comp/env/";
 }

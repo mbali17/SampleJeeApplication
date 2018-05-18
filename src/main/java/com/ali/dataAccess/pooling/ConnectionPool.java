@@ -1,5 +1,6 @@
 package com.ali.dataAccess.pooling;
 
+import com.ali.constants.DatabaseConstants;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.naming.Context;
@@ -9,11 +10,13 @@ import javax.sql.DataSource;
 import java.util.Optional;
 
 /**
- * Obtains the datasource created using the tomcat API .
+ * Obtains the datasource created using the tomcat API.
  */
 public class ConnectionPool {
     private static DataSource dataSource;
-    //Empty constructor so that the object is not created. AS this is a singleton.
+    /**
+     *Empty constructor so that the object is not created. AS this is a singleton.
+     */
     private ConnectionPool(){
 
     }
@@ -28,7 +31,7 @@ public class ConnectionPool {
             throw new IllegalArgumentException("Datasource name cannot be blank");
         }else{
             Context context = new InitialContext();
-            dataSource= (DataSource)context.lookup("java:comp/env/"+datasourceName.get());
+            dataSource= (DataSource)context.lookup(DatabaseConstants.JNDI_PREFIX+datasourceName.get());
         }
     }
 
