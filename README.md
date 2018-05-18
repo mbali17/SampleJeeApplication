@@ -1,2 +1,2 @@
 # javapractice
-This repo is used to collate the programs practiced for java
+This repo is used for building web application helping user to list, Add or remove TODO items. 
