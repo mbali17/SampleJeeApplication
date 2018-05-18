@@ -1,7 +1,12 @@
 package com.ali.servlets.registration;
 
 import com.ali.beans.user.UserBean;
+import com.ali.constants.ApplicationConstants;
+import com.ali.constants.JSPUrlConstants;
+import com.ali.constants.ServletUrlConstants;
 import com.ali.services.registration.UserRegistrationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,41 +15,46 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
 /**
  *Servlet used to handle user registration.
  */
-@WebServlet(urlPatterns= "/register.do",
+@WebServlet(urlPatterns= ServletUrlConstants.REGISTRATIONSERVLET_URL,
 			description= "Servlet used to handle user registration.")
 public class UserRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserRegistrationServlet.class);
+	/**
+	 * Redirects the initial request to the User Registration page.
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("message",request.getParameter("name"));
-		request.getRequestDispatcher("/WEB-INF/views/UserRegistration.jsp").forward(request,response);
+		LOGGER.info("Redirecting to registeration");
+		request.getRequestDispatcher(JSPUrlConstants.REGISTRATION_JSP_URL).forward(request,response);
 	}
 
-	public UserRegistrationServlet() {
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//Read user inputs
-		String userName = request.getParameter("userName");
-		String email = request.getParameter("email");
-		String passWord = request.getParameter("password");
-		String repeatPassword = request.getParameter("repeatPassword");
+		String userName = request.getParameter(ApplicationConstants.USER_NAME);
+		String email = request.getParameter(ApplicationConstants.EMAIL);
+		String passWord = request.getParameter(ApplicationConstants.PASSWORD);
+		String repeatPassword = request.getParameter(ApplicationConstants.REPEAT_PASSWORD);
 		UserBean userBean = new UserBean(userName,email,passWord,repeatPassword);
 		UserRegistrationService registrationService = new UserRegistrationService();
-		System.out.println("is valid user {}"+registrationService.isValidUser(userBean) + ","+ userBean.getName().equals(""));
+		LOGGER.info("The user name is {}",userBean.getName());
 		if(registrationService.isValidUser(userBean)){
 			registrationService.registerUser(userBean);
-            request.setAttribute("welcomeMessage",userBean.getName());
-            request.getRequestDispatcher("/WEB-INF/views/Login.jsp").forward(request,response);
+            request.getRequestDispatcher(JSPUrlConstants.LOGIN_JSP_URL).forward(request,response);
 		}else{
             request.setAttribute("errorMessage","Password and repeat password do not match");
-            request.getRequestDispatcher("/WEB-INF/views/UserRegistration.jsp").forward(request,response);
+            request.getRequestDispatcher(JSPUrlConstants.REGISTRATION_JSP_URL).forward(request,response);
         }
 	}
 

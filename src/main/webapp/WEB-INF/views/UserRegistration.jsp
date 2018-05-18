@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.ali.constants.ServletUrlConstants" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +8,7 @@
 <title>User Registration</title>
 <style>
     .error{
-        color: red";
+        color: red;
     }
 </style>
 </head>
@@ -15,7 +16,7 @@
 <h1>Register Here <h1>
 <p class="error">${errorMessage}</p>
 <%-- TODO:Add front end validations --%>
-<form action="register" method="post">
+<form action="register.do" method="post">
     <label for="userName">Enter User Name:</label>
     <input type="text" name="userName" id="userName"/>
     <br/>
