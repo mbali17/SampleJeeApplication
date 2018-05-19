@@ -63,6 +63,13 @@
 		  <artifactId>slf4j-log4j12</artifactId>
 		  <version>1.7.5</version>
 	  </dependency>
+	  <!-- For hashing passwords.https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+	  <dependency>
+		  <groupId>commons-codec</groupId>
+		  <artifactId>commons-codec</artifactId>
+		  <version>1.11</version>
+	  </dependency>
+
   </dependencies>
   <build>
     <finalName>LearnJee</finalName>

@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>Welcome to the TODO app.</h1>
-<a href= <%= ServletUrlConstants.REGISTRATIONSERVLET_URL%>>Register Here</a>
+<a href="register.do">Register Here</a>
 </body>
 </html>

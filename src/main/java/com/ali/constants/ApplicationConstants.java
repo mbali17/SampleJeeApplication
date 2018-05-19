@@ -8,7 +8,7 @@ public class ApplicationConstants {
     private ApplicationConstants(){
 
     }
-    public static final String USER_NAME = "username";
+    public static final String USER_NAME = "userName";
     public static final String PASSWORD = "password";
     public static final String EMAIL = "email";
     public static final String REPEAT_PASSWORD = "repeatPassword";

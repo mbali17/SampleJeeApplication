@@ -12,4 +12,8 @@ public class DatabaseConstants {
     }
 
     public static final String DATASOURCENAME = "jdbc/todoapp";
+
+    //User registration SQL
+    public static final String INSERT_USER_SQL = "INSERT INTO `Todoapp`.`users`(`user_name`,`password`,`email`)" +
+                                                 "VALUES(?,?,?)";
 }
