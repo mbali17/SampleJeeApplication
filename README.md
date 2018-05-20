@@ -1,2 +1,3 @@
-# OnlineDictionary  
-This is a web application being used to keep track of new words learnt, This is the initial scope of the project.
+# TODO APP
+This a TODO tracker application allowing user's to register, login and maintain there list of TODO items. The main idea is to learn building JEE application using maven,Tomcat and J2EE technologies(servlets,JSP)
+
