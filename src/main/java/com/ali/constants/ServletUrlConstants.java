@@ -9,5 +9,5 @@ public class ServletUrlConstants {
     }
     public static final String DBCONNECTIONSERVLET_URL = "/getDBconnectionStatus";
     public static final String REGISTRATIONSERVLET_URL = "/register.do";
-
+    public static final String LOGINSERVLET_URL = "/login.do";
 }
