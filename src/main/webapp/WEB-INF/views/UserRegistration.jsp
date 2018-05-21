@@ -16,7 +16,7 @@
 <h1>Register Here <h1>
 <p class="error">${errorMessage}</p>
 <%-- TODO:Add front end validations --%>
-<form action="register.do" method="post">
+<form action="do/register" method="post">
     <label for="userName">Enter User Name:</label>
     <input type="text" name="userName" id="userName"/>
     <br/>

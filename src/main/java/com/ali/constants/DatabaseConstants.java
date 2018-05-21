@@ -16,4 +16,6 @@ public class DatabaseConstants {
     //User registration SQL
     public static final String INSERT_USER_SQL = "INSERT INTO `Todoapp`.`users`(`user_name`,`password`,`email`)" +
                                                  "VALUES(?,?,?)";
+    public static final String SELECT_USER_SQL = "SELECT userName,password FROM Todoapp.users where userName=? " +
+                                                 "and password=?";
 }

@@ -13,5 +13,4 @@ public class ApplicationConstants {
     public static final String EMAIL = "email";
     public static final String REPEAT_PASSWORD = "repeatPassword";
 
-
 }

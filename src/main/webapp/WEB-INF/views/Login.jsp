@@ -8,10 +8,11 @@
 </head>
 <body>
 <h1>Welcome to the TODO app. Please login to continue </h1>
-<form method="post" action="login.do">
+<form method="post" action="login">
     <label for="userName">Enter UserName</label>
     <input type="text" placeholder="Enter User Name" id="userName" name="userName">
-    <label for="password">Enter UserName</label>
+    <br/>
+    <label for="password">Enter Password</label>
     <input type="password" placeholder="Enter Password" id="password" name="password">
     <input type="submit" value="login">
 </form>

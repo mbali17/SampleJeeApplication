@@ -9,6 +9,6 @@
 </head>
 <body>
 <h1>Welcome to the TODO app.</h1>
-<a href="register.do">Register Here</a>
+<a href="do/register">Register Here</a>
 </body>
 </html>
